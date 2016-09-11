@@ -1,0 +1,72 @@
+<nav>
+  <div class="container">
+    <div class="navbar">
+      <!-- Left part -->
+      <div class="navbar-left hidden-sm hidden-xs">
+      <!-- Logo -->
+          <%= image_tag "logo.png" %>
+      </div>
+
+      <!-- Middle part (for search for instance)-->
+      <div class="navbar-middle">
+
+        <!-- Search form -->
+        <form action="" class="navbar-search">
+          <input type="text" class="navbar-search-input" placeholder="Search something">
+          <button type="submit" class="navbar-search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+
+      </div>
+
+      <!-- right part -->
+      <div class="navbar-right hidden-sm hidden-xs">
+        <!-- Call to action button -->
+        <div class="btn btn-mnml-empty">Create</div>
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-profile-menu">
+          <div class="dropdown">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-right-mobile hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            </li>
+            <li>
+              <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+            </li>
+            <li>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
